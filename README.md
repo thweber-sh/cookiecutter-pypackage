@@ -8,14 +8,8 @@ Python package. Forked under the BSD license.
 -   Testing setup with `unittest` and `python setup.py test` or `pytest`
 -   [Tox](http://testrun.org/tox/) testing: Setup to easily test for
     Python 3.5, 3.6, 3.7, 3.8
--   [Sphinx](http://sphinx-doc.org/) docs: Documentation ready for
-    generation with, for example, [Read the
-    Docs](https://readthedocs.io/)
 -   [bump2version](https://github.com/c4urself/bump2version):
     Pre-configured version bumping with a single command
--   Auto-release to [PyPI](https://pypi.python.org/pypi) when you push a
-    new tag to master (optional)
--   Command line interface using Click (optional)
 
 
 ## Quickstart
