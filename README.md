@@ -1,7 +1,8 @@
 # Cookiecutter PyPackage
 
-Fork of a [cookiecutter](https://github.com/audreyr/cookiecutter) template for a
-Python package. Forked under the BSD license.
+A generic Python Package template that can be used with the utility [cookiecutter](https://github.com/cookiecutter/cookiecutter)
+
+Fork of a popular Python package cookiecutter [template](https://github.com/audreyr/cookiecutter). Forked under the BSD license.
 
 ## Features
 
