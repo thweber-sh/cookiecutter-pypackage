@@ -22,7 +22,7 @@ test_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- end
 } %}
 
 setup(
-    author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
+    author="{{ cookiecutter.domain_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
     python_requires='>=3.5',
     classifiers=[
