@@ -32,14 +32,14 @@ clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
-	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
+	find . -path '*.egg-info*' -delete
+	find . -name '*.egg' -delete
 
 clean-pyc: ## remove Python file artifacts
-	find . -name '*.pyc' -exec rm -f {} +
-	find . -name '*.pyo' -exec rm -f {} +
-	find . -name '*~' -exec rm -f {} +
-	find . -name '__pycache__' -exec rm -fr {} +
+	find . -name '*.pyc' -delete
+	find . -name '*.pyo' -delete
+	find . -name '*~' -delete
+	find . -path '*/__pycache__*' -delete
 
 clean-test: ## remove test and coverage artifacts
 	rm -fr .tox/
@@ -69,22 +69,6 @@ coverage: ## check code coverage quickly with the default Python
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
-
-# TODO: Consider standarizing our documentation with Sphinx
-# docs: ## generate Sphinx HTML documentation, including API docs
-# 	rm -f docs/{{ cookiecutter.project_slug }}.rst
-# 	rm -f docs/modules.rst
-# 	sphinx-apidoc -o docs/ {{ cookiecutter.project_slug }}
-# 	$(MAKE) -C docs clean
-# 	$(MAKE) -C docs html
-# 	$(BROWSER) docs/_build/html/index.html
-
-# servedocs: docs ## compile the docs watching for changes
-# 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
-
-# TODO: Consider refactoring this to upload to artifactory
-# release: dist ## package and upload a release
-# 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
 	python setup.py sdist
